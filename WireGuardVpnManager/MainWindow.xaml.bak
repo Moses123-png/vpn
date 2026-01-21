@@ -19,7 +19,7 @@
             <Separator Margin="0,10"/>
             <TextBlock Text="Profile Options" FontWeight="Bold" Margin="0,6,0,6"/>
             <StackPanel Orientation="Vertical">
-                <CheckBox Name="AutoConnectCheck" Content="Auto-Connect (monitor &amp; reconnect)" Click="AutoConnectCheck_Click" Margin="0,4"/>
+                <CheckBox Name="AutoConnectCheck" Content="Auto-Connect (monitor & reconnect)" Click="AutoConnectCheck_Click" Margin="0,4"/>
                 <CheckBox Name="AutoStartCheck" Content="Auto-Start on Login" Click="AutoStartCheck_Click" Margin="0,4"/>
                 <Button Name="ExportLogsBtn" Click="ExportLogsBtn_Click" Width="160" Margin="4">Export Logs</Button>
             </StackPanel>
@@ -53,4 +53,3 @@
         </StackPanel>
     </Grid>
 </Window>
-
