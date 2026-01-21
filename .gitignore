@@ -1,0 +1,12 @@
+﻿bin/
+obj/
+publish/
+publish-*/
+Output/
+*.user
+*.vs/
+.vscode/
+*.db
+*.pdb
+*.suo
+*.local

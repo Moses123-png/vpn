@@ -1,0 +1,3 @@
+﻿# This assumes you copied the C# contents above into the clipboard.
+Get-Clipboard -Raw | Out-File -FilePath $target -Encoding utf8
+Write-Host "Wrote new FirewallManager.cs to $target"

@@ -1,0 +1,56 @@
+﻿<Window x:Class="WireGuardVpnManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mwesigwa Moses VPN" Height="560" Width="960">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="6">
+            <TextBlock Text="Tunnels" FontWeight="Bold" Margin="0,0,0,6"/>
+            <ListBox Name="TunnelsList" Height="260" SelectionChanged="TunnelsList_SelectionChanged"/>
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                <Button Name="ImportBtn" Click="ImportBtn_Click" Width="120" Margin="2">Import Tunnel</Button>
+                <Button Name="InstallBtn" Click="InstallBtn_Click" Width="120" Margin="2">Install / Start</Button>
+                <Button Name="UninstallBtn" Click="UninstallBtn_Click" Width="120" Margin="2">Uninstall / Stop</Button>
+            </StackPanel>
+
+            <Separator Margin="0,10"/>
+            <TextBlock Text="Profile Options" FontWeight="Bold" Margin="0,6,0,6"/>
+            <StackPanel Orientation="Vertical">
+                <CheckBox Name="AutoConnectCheck" Content="Auto-Connect (monitor &amp; reconnect)" Click="AutoConnectCheck_Click" Margin="0,4"/>
+                <CheckBox Name="AutoStartCheck" Content="Auto-Start on Login" Click="AutoStartCheck_Click" Margin="0,4"/>
+                <Button Name="ExportLogsBtn" Click="ExportLogsBtn_Click" Width="160" Margin="4">Export Logs</Button>
+            </StackPanel>
+
+            <Separator Margin="0,10"/>
+            <TextBlock Text="Kill Switch" FontWeight="Bold" Margin="0,6,0,6"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="EnableKillBtn" Click="EnableKillBtn_Click" Width="160" Margin="2">Enable Kill Switch</Button>
+                <Button Name="DisableKillBtn" Click="DisableKillBtn_Click" Width="160" Margin="2">Disable Kill Switch</Button>
+            </StackPanel>
+
+            <Separator Margin="0,10"/>
+            <Button Name="TestBtn" Click="TestBtn_Click" Width="160" Margin="0,6,0,0">Test Public IP</Button>
+            <TextBlock Text="Notes:" FontWeight="Bold" Margin="0,10,0,4"/>
+            <TextBlock TextWrapping="Wrap">
+                - Install WireGuard for Windows first.
+                - Run this app as Administrator (elevation requested on launch).
+                - Kill switch uses Windows Firewall COM API for better control.
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="6">
+            <TextBlock Text="Logs / Status" FontWeight="Bold" Margin="0,0,0,6"/>
+            <TextBox Name="LogBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" IsReadOnly="True" TextWrapping="Wrap" Height="380"/>
+            <TextBlock Text="Selected Profile" FontWeight="Bold" Margin="0,8,0,4"/>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Name="ProfileNameText" Text="(no profile selected)" FontWeight="Bold"/>
+                <TextBlock Name="ProfileFileText" Text="" />
+                <TextBlock Name="ProfileLastIpText" Text="" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+
